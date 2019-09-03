@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>glasgow-ux-conversation</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form id="form">
+
+  <fieldset cf-questions="O paciente está com o olho aberto?">
+    <label for="abertura-ocular-p1-sim">
+      Sim
+      <input type="radio" 
+             name="abertura-ocular-p1" 
+             id="abertura-ocular-p1-sim" 
+             value="4">
+    </label>
+
+    <label for="abertura-ocular-p1-nao">
+      Não
+      <input type="radio" 
+             name="abertura-ocular-p1" 
+             id="abertura-ocular-p1-nao" 
+             value="0">
+    </label>
+  </fieldset>
+
+  <fieldset cf-questions="Chame a pessoa pelo nome, com voz firme... Ele abriu os olhos?" >
+    <label for="abertura-ocular-p2-sim">
+      Sim
+      <input type="radio" 
+             name="abertura-ocular-p2" 
+             id="abertura-ocular-p2-sim" 
+             value="3"
+             cf-conditional-abertura-ocular-p1="0">
+    </label>
+
+    <label for="abertura-ocular-p2-nao">
+      Não
+      <input type="radio" 
+             name="abertura-ocular-p2" 
+             id="abertura-ocular-p2-nao" 
+             value="0"
+             cf-conditional-abertura-ocular-p1="0">
+    </label>
+  </fieldset>
+  
+  <fieldset cf-questions="De um beliscão no paciente... Ele abriu os olhos?" >
+    <label for="abertura-ocular-p3-sim">
+      Sim
+      <input type="radio" 
+             name="abertura-ocular-p3" 
+             id="abertura-ocular-p3-sim" 
+             value="2"
+             cf-conditional-abertura-ocular-p2="0">
+    </label>
+
+    <label for="abertura-ocular-p3-nao">
+      Não
+      <input type="radio" 
+             name="abertura-ocular-p3" 
+             id="abertura-ocular-p3-nao" 
+             value="1"
+             cf-conditional-abertura-ocular-p2="0">
+    </label>
+  </fieldset>
+  
+  <select cf-questions="Pergunte ao paciente se ele sabe aonde ele está"
+          id="resposta-verbal-p1">
+    <option value="5">Sabe aonde está</option>
+    <option value="4">Confuso, não consegue informar de forma adequada</option>
+    <option value="3">Está falando palavras inapropriadas, fora de contexto</option>
+    <option value="2">Está falando palavras incompreensivas (balbuciando)</option>
+    <option value="1">Não responde</option>
+  </select>
+  
+   <fieldset cf-questions="Peça ao paciente para mexer a mão esquerda ou direita... Ele mexeu a mão que você perguntou?">
+    <label for="resposta-motora-p1-sim">
+      Sim
+      <input type="radio" 
+             name="resposta-motora-p1" 
+             id="resposta-motora-p1-sim" 
+             value="5">
+    </label>
+
+    <label for="resposta-motora-p1-nao">
+      Não
+      <input type="radio" 
+             name="resposta-motora-p1" 
+             id="resposta-motora-p1-nao" 
+             value="0">
+    </label>
+  </fieldset>
+  
+  <fieldset cf-questions="Apos o estímulo doloroso ele tentou retirar o membro que foi estimulado?">
+    <label for="resposta-motora-p2-sim">
+      Sim
+      <input type="radio" 
+             name="resposta-motora-p2" 
+             id="resposta-motora-p2-sim" 
+             value="4"
+             cf-conditional-resposta-motora-p1="0">
+    </label>
+
+    <label for="resposta-motora-p2-nao">
+      Não
+      <input type="radio" 
+             name="resposta-motora-p2" 
+             id="resposta-motora-p2-nao" 
+             value="0"
+             cf-conditional-resposta-motora-p1="0">
+    </label>
+  </fieldset>
+  
+  
+  <fieldset cf-questions=" Paciente flexionou qualquer outra parte do corpo?">
+    <label for="resposta-motora-p3-sim">
+      Sim
+      <input type="radio" 
+             name="resposta-motora-p3" 
+             id="resposta-motora-p3-sim" 
+             value="3"
+             cf-conditional-resposta-motora-p2="0">
+    </label>
+
+    <label for="resposta-motora-p3-nao">
+      Não
+      <input type="radio" 
+             name="resposta-motora-p3" 
+             id="resposta-motora-p3-nao" 
+             value="0"
+             cf-conditional-resposta-motora-p2="0">
+    </label>
+  </fieldset>
+  
+  <fieldset cf-questions="Paciente estendeu ou fez algum outro movimento anormal no corpo?">
+    <label for="resposta-motora-p5-sim">
+      Sim
+      <input type="radio" 
+             name="resposta-motora-p5" 
+             id="resposta-motora-p5-sim" 
+             value="2"
+      />
+     </label>
+
+    <label for="resposta-motora-p5-nao">
+      Não
+      <input type="radio" 
+             name="resposta-motora-p5" 
+             id="resposta-motora-p5-nao" 
+             value="1"
+      />
+      
+    </label>
+  </fieldset>
+</form>
+
+<div id="cf-context" role="cf-context" cf-context></div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/gh/space10-community/conversational-form@1.0.1/dist/conversational-form.min.js'></script>
+<script  src="./script.js"></script>
+
+</body>
+</html>
